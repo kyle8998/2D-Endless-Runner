@@ -14,6 +14,12 @@ public class GameManager : MonoBehaviour {
 
     private ScoreManager theScoreManager;
 
+    public DeathMenu theDeathScreen;
+
+    
+   
+    
+
 	// Use this for initialization
 	void Start () {
         obstacleStartPoint = obstacleGenerator.position;
@@ -30,10 +36,34 @@ public class GameManager : MonoBehaviour {
 
     public void RestartGame ()
     {
-        StartCoroutine("RestartGameCo");
+        theScoreManager.scoreIncreasing = false;
+        //deactivate and wait
+        thePlayer.gameObject.SetActive(false);
+        //StartCoroutine("RestartGameCo");
+
+        theDeathScreen.gameObject.SetActive(true);
     }
+
+    public void Reset()
+    {
+        theDeathScreen.gameObject.SetActive(false);
+        obstacleList = FindObjectsOfType<ObstacleDestroyer>();
+        //deactivate all obstacles
+        for (int i = 0; i < obstacleList.Length; i++)
+        {
+            obstacleList[i].gameObject.SetActive(false);
+        }
+        thePlayer.transform.position = playerStartPoint;
+        obstacleGenerator.position = obstacleStartPoint;
+        //Set rotation back to 0
+        thePlayer.transform.rotation = Quaternion.identity;
+        thePlayer.gameObject.SetActive(true);
+        theScoreManager.scoreCount = 0;
+        theScoreManager.scoreIncreasing = true;
+    }
+
     //Coroutine
-    public IEnumerator RestartGameCo()
+   /* public IEnumerator RestartGameCo()
     {
         theScoreManager.scoreIncreasing = false;
         //deactivate and wait
@@ -52,6 +82,6 @@ public class GameManager : MonoBehaviour {
         thePlayer.gameObject.SetActive(true);
         theScoreManager.scoreCount = 0;
         theScoreManager.scoreIncreasing = true;
-    }
+    } */
 
 }

@@ -37,6 +37,9 @@ public class WallPlayer : MonoBehaviour
 
     public GameManager theGameManager;
 
+    public AudioSource tapSound;
+    public AudioSource deathSound;
+
     // Use this for initialization
     void Start()
     {
@@ -75,13 +78,14 @@ public class WallPlayer : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
-
+            
             //myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, jumpForce);
             // if (myRigidBody.velocity.x > 0)
             //myRigidBody.velocity = new Vector2((float)0.0, myRigidBody.velocity.y);
-
+            tapSound.Play();
             if (trigger)
             {
+                
                 //myRigidBody.AddForce(new Vector2((float)-150.0, myRigidBody.velocity.y));
 
                 //To counteract the high velocity - Prevents too much slide
@@ -159,7 +163,7 @@ public class WallPlayer : MonoBehaviour
     {
         if (other.gameObject.tag == "killbox")
         {
-            
+            deathSound.Play();
             theGameManager.RestartGame();
             moveSpeedUp = moveSpeedUpStore;
             speedMilestoneCount = speedMilestoneCountStore;
