@@ -15,8 +15,8 @@ public class ObstacleDestroyer : MonoBehaviour {
 	void Update () {
         if (transform.position.y < obstacleDestructionPoint.transform.position.y)
         {
-            Destroy(gameObject);
-            //gameObject.SetActive(false);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
 
 	}

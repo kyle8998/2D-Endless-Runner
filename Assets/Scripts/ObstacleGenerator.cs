@@ -15,12 +15,12 @@ public class ObstacleGenerator : MonoBehaviour {
 
     //private float obstacleHeight;
 
-    public GameObject[] theObstacles;
+    //public GameObject[] theObstacles;
     private int obstacleSelector;
 
 
 
-    //public ObjectPooler theObjectPool;
+    public ObjectPooler[] theObjectPools;
 
 	// Use this for initialization
 	void Start () {
@@ -38,14 +38,14 @@ public class ObstacleGenerator : MonoBehaviour {
 
             transform.position = new Vector3(distanceBetweenX, transform.position.y + distanceBetween, transform.position.z);
 
-            obstacleSelector = Random.Range(0, theObstacles.Length);
+            obstacleSelector = Random.Range(0, theObjectPools.Length);
 
-            Instantiate(/*theObstacle*/theObstacles[obstacleSelector], transform.position, transform.rotation);
-            /*GameObject newObstacle = theObjectPool.GetPooledObject();
+            //Instantiate(/*theObstacle*/theObstacles[obstacleSelector], transform.position, transform.rotation);
+            GameObject newObstacle = theObjectPools[obstacleSelector].GetPooledObject();
 
             newObstacle.transform.position = transform.position;
             newObstacle.transform.rotation = transform.rotation;
-            newObstacle.SetActive(true);*/
+            newObstacle.SetActive(true);
 
         }
 

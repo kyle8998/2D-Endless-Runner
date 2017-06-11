@@ -8,7 +8,19 @@ public class WallPlayer : MonoBehaviour
     public float moveSpeedLeft;
     public float moveSpeedRight;
     public float moveSpeedUp;
-    public float jumpForce;
+    
+
+    public float speedMultiplier;
+    public float speedIncreaseMilestone;
+    private float speedMilestoneCount;
+    public float speedCap;
+
+
+    private float moveSpeedUpStore;
+    private float speedMilestoneCountStore;
+    private float speedIncreaseMilestoneStore;
+
+    //public float jumpForce;
     public float maxSpeed;
 
     //Trigger for back and forth jump
@@ -23,6 +35,8 @@ public class WallPlayer : MonoBehaviour
 
     private Collider2D myCollider;
 
+    public GameManager theGameManager;
+
     // Use this for initialization
     void Start()
     {
@@ -30,11 +44,28 @@ public class WallPlayer : MonoBehaviour
         trigger = true;
 
         myCollider = GetComponent<Collider2D>();
+
+        speedMilestoneCount = speedIncreaseMilestone;
+
+        moveSpeedUpStore = moveSpeedUp;
+        speedMilestoneCountStore = speedMilestoneCount;
+        speedIncreaseMilestoneStore = speedIncreaseMilestone;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (transform.position.y > speedMilestoneCount && moveSpeedUp < speedCap)
+        {
+            speedMilestoneCount += speedIncreaseMilestone;
+            speedIncreaseMilestone = speedIncreaseMilestone * speedMultiplier;
+            moveSpeedUp *= speedMultiplier;
+            if (moveSpeedUp > speedCap)
+            {
+                moveSpeedUp = speedCap;
+            }
+        }
+
         // Constant upwards velocity
         myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, moveSpeedUp);
         collision = Physics2D.IsTouchingLayers(myCollider, whatIsWall);
@@ -56,11 +87,11 @@ public class WallPlayer : MonoBehaviour
                 //To counteract the high velocity - Prevents too much slide
                 if (myRigidBody.velocity.x > 5)
                 {
-                    myRigidBody.velocity = new Vector2((float)5.0, myRigidBody.velocity.y);
+                    myRigidBody.velocity = new Vector2((float)3.0, myRigidBody.velocity.y);
                 }
                 else if (myRigidBody.velocity.x > 3)
                 {
-                    myRigidBody.velocity = new Vector2((float)3.0, myRigidBody.velocity.y);
+                    myRigidBody.velocity = new Vector2((float)2.0, myRigidBody.velocity.y);
                 }
                 else if (myRigidBody.velocity.x > 1)
                 {
@@ -70,6 +101,8 @@ public class WallPlayer : MonoBehaviour
                 {
                     myRigidBody.velocity = new Vector2((float)0.0, myRigidBody.velocity.y);
                 }
+               // myRigidBody.velocity = new Vector2((float)0.0, myRigidBody.velocity.y);
+                myRigidBody.AddForce(new Vector2(-30, myRigidBody.velocity.y));
                 trigger = false;
             }
             else
@@ -77,11 +110,11 @@ public class WallPlayer : MonoBehaviour
                 //myRigidBody.AddForce(new Vector2((float)150.0, myRigidBody.velocity.y));
                 if (myRigidBody.velocity.x < -5)
                 {
-                    myRigidBody.velocity = new Vector2((float)-5.0, myRigidBody.velocity.y);
+                    myRigidBody.velocity = new Vector2((float)-3.0, myRigidBody.velocity.y);
                 }
                 else if(myRigidBody.velocity.x < -3)
                 {
-                    myRigidBody.velocity = new Vector2((float)-3.0, myRigidBody.velocity.y);
+                    myRigidBody.velocity = new Vector2((float)-2.0, myRigidBody.velocity.y);
                 }
                 else if (myRigidBody.velocity.x < -1)
                 {
@@ -90,8 +123,9 @@ public class WallPlayer : MonoBehaviour
                 else
                 {
                     myRigidBody.velocity = new Vector2((float)0.0, myRigidBody.velocity.y);
+                    
                 }
-                
+                myRigidBody.AddForce(new Vector2(30, myRigidBody.velocity.y));
                 trigger = true;
             }
 
@@ -99,17 +133,37 @@ public class WallPlayer : MonoBehaviour
 
         if (trigger)
         {
-     
-            myRigidBody.AddForce(new Vector2(moveSpeedRight, myRigidBody.velocity.y));
+            if (Mathf.Abs(myRigidBody.velocity.x) < maxSpeed/2)
+                myRigidBody.AddForce(new Vector2(moveSpeedRight, myRigidBody.velocity.y));
+
+            else if (Mathf.Abs(myRigidBody.velocity.x) < maxSpeed)
+                myRigidBody.AddForce(new Vector2(moveSpeedRight/2, myRigidBody.velocity.y));
         }
         else
         {
-            myRigidBody.AddForce(new Vector2(moveSpeedLeft, myRigidBody.velocity.y));
+            if (Mathf.Abs(myRigidBody.velocity.x) < maxSpeed/2)
+                myRigidBody.AddForce(new Vector2(moveSpeedLeft, myRigidBody.velocity.y));
+
+            else if (Mathf.Abs(myRigidBody.velocity.x) < maxSpeed)
+                myRigidBody.AddForce(new Vector2(moveSpeedLeft/2, myRigidBody.velocity.y));
         }
 
         //if (Mathf.Abs(myRigidBody.velocity.x) > maxSpeed)
         //{
         //    speedTrigger = true;
         //}
+    }
+
+
+    void OnCollisionEnter2D (Collision2D other)
+    {
+        if (other.gameObject.tag == "killbox")
+        {
+            
+            theGameManager.RestartGame();
+            moveSpeedUp = moveSpeedUpStore;
+            speedMilestoneCount = speedMilestoneCountStore;
+            speedIncreaseMilestone = speedIncreaseMilestoneStore;
+        }
     }
 }
