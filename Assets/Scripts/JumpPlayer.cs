@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallPlayer : MonoBehaviour
+public class JumpPlayer : MonoBehaviour
 {
 
     public float moveSpeedLeft;
@@ -106,7 +106,7 @@ public class WallPlayer : MonoBehaviour
                     myRigidBody.velocity = new Vector2((float)0.0, myRigidBody.velocity.y);
                 }
                 // myRigidBody.velocity = new Vector2((float)0.0, myRigidBody.velocity.y);
-                myRigidBody.AddForce(new Vector2(-30, myRigidBody.velocity.y));
+                myRigidBody.AddForce(new Vector2(-300, myRigidBody.velocity.y));
                 trigger = false;
             }
             else
@@ -129,7 +129,7 @@ public class WallPlayer : MonoBehaviour
                     myRigidBody.velocity = new Vector2((float)0.0, myRigidBody.velocity.y);
 
                 }
-                myRigidBody.AddForce(new Vector2(30, myRigidBody.velocity.y));
+                myRigidBody.AddForce(new Vector2(300, myRigidBody.velocity.y));
                 trigger = true;
             }
 
