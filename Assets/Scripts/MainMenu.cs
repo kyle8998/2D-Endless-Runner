@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour {
 
     public string playGameLevel;
+    public string playExperimentalLevel;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +22,12 @@ public class MainMenu : MonoBehaviour {
     {
         //Application.LoadLevel(playGameLevel);
         SceneManager.LoadScene(playGameLevel);
+    }
+
+    public void PlayExperimentalGame()
+    {
+        //Application.LoadLevel(playGameLevel);
+        SceneManager.LoadScene(playExperimentalLevel);
     }
 
     public void QuitGame()

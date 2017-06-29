@@ -89,7 +89,7 @@ public class JumpPlayer : MonoBehaviour
                 //myRigidBody.AddForce(new Vector2((float)-150.0, myRigidBody.velocity.y));
 
                 //To counteract the high velocity - Prevents too much slide
-                if (myRigidBody.velocity.x > 5)
+               /* if (myRigidBody.velocity.x > 5)
                 {
                     myRigidBody.velocity = new Vector2((float)3.0, myRigidBody.velocity.y);
                 }
@@ -104,15 +104,15 @@ public class JumpPlayer : MonoBehaviour
                 else
                 {
                     myRigidBody.velocity = new Vector2((float)0.0, myRigidBody.velocity.y);
-                }
+                }*/
                 // myRigidBody.velocity = new Vector2((float)0.0, myRigidBody.velocity.y);
-                myRigidBody.AddForce(new Vector2(-300, myRigidBody.velocity.y));
+                myRigidBody.AddForce(new Vector2(-600, myRigidBody.velocity.y));
                 trigger = false;
             }
             else
             {
                 //myRigidBody.AddForce(new Vector2((float)150.0, myRigidBody.velocity.y));
-                if (myRigidBody.velocity.x < -5)
+              /*  if (myRigidBody.velocity.x < -5)
                 {
                     myRigidBody.velocity = new Vector2((float)-3.0, myRigidBody.velocity.y);
                 }
@@ -128,8 +128,8 @@ public class JumpPlayer : MonoBehaviour
                 {
                     myRigidBody.velocity = new Vector2((float)0.0, myRigidBody.velocity.y);
 
-                }
-                myRigidBody.AddForce(new Vector2(300, myRigidBody.velocity.y));
+                }*/
+                myRigidBody.AddForce(new Vector2(600, myRigidBody.velocity.y));
                 trigger = true;
             }
 
