@@ -1,0 +1,74 @@
+Mono path[0] = 'C:/Users/Kyle Lim/Documents/Unity Projects/2D-Endless-Runner/TestingPC/test_Data/Managed'
+Mono path[1] = 'C:/Users/Kyle Lim/Documents/Unity Projects/2D-Endless-Runner/TestingPC/test_Data/Mono'
+Mono config path = 'C:/Users/Kyle Lim/Documents/Unity Projects/2D-Endless-Runner/TestingPC/test_Data/Mono/etc'
+PlayerConnection initialized from C:/Users/Kyle Lim/Documents/Unity Projects/2D-Endless-Runner/TestingPC/test_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55504
+Broadcasting "[IP] 169.254.98.97 [Port] 55504 [Flags] 2 [Guid] 989851653 [EditorId] 1356840818 [Version] 1048832 [Id] WindowsPlayer(Kyle) [Debug] 0" to [169.254.255.255:54997]...
+Started listening to [0.0.0.0:55504]
+PlayerConnection already initialized - listening to [0.0.0.0:55504]
+Player data archive not found at `C:/Users/Kyle Lim/Documents/Unity Projects/2D-Endless-Runner/TestingPC/test_Data/data.unity3d`, using local filesystemInitialize engine version: 5.6.0f3 (497a0f351392)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 960M (ID=0x139b)
+    Vendor:   NVIDIA
+    VRAM:     2018 MB
+    Driver:   21.21.13.7254
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Kyle Lim\Documents\Unity Projects\2D-Endless-Runner\TestingPC\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Kyle Lim\Documents\Unity Projects\2D-Endless-Runner\TestingPC\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Kyle Lim\Documents\Unity Projects\2D-Endless-Runner\TestingPC\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Kyle Lim\Documents\Unity Projects\2D-Endless-Runner\TestingPC\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Kyle Lim\Documents\Unity Projects\2D-Endless-Runner\TestingPC\test_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\Kyle Lim\Documents\Unity Projects\2D-Endless-Runner\TestingPC\test_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\Kyle Lim\Documents\Unity Projects\2D-Endless-Runner\TestingPC\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Kyle Lim\Documents\Unity Projects\2D-Endless-Runner\TestingPC\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Kyle Lim\Documents\Unity Projects\2D-Endless-Runner\TestingPC\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Kyle Lim\Documents\Unity Projects\2D-Endless-Runner\TestingPC\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Kyle Lim\Documents\Unity Projects\2D-Endless-Runner\TestingPC\test_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Kyle Lim\Documents\Unity Projects\2D-Endless-Runner\TestingPC\test_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.051 seconds
+Platform assembly: C:\Users\Kyle Lim\Documents\Unity Projects\2D-Endless-Runner\TestingPC\test_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Kyle Lim\Documents\Unity Projects\2D-Endless-Runner\TestingPC\test_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.072158 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 6.446766 ms
+System memory in use before: 17.7 MB.
+System memory in use after: 17.7 MB.
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 578.
+Total: 0.294093 ms (FindLiveObjects: 0.038686 ms CreateObjectMapping: 0.015395 ms MarkObjects: 0.234090 ms  DeleteObjects: 0.005131 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.679770 ms
+System memory in use before: 17.6 MB.
+System memory in use after: 17.3 MB.
+
+Unloading 66 unused Assets to reduce memory usage. Loaded Objects now: 296.
+Total: 0.394756 ms (FindLiveObjects: 0.020922 ms CreateObjectMapping: 0.014605 ms MarkObjects: 0.174877 ms  DeleteObjects: 0.183166 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.049657 ms
+System memory in use before: 18.3 MB.
+System memory in use after: 18.3 MB.
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 736.
+Total: 0.343832 ms (FindLiveObjects: 0.056844 ms CreateObjectMapping: 0.020922 ms MarkObjects: 0.257381 ms  DeleteObjects: 0.007105 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.046104 ms
+System memory in use before: 17.7 MB.
+System memory in use after: 17.4 MB.
+
+Unloading 66 unused Assets to reduce memory usage. Loaded Objects now: 296.
+Total: 0.448048 ms (FindLiveObjects: 0.031185 ms CreateObjectMapping: 0.015395 ms MarkObjects: 0.202115 ms  DeleteObjects: 0.197772 ms)
+
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 16848 -> priority: 1 
+  Thread -> id: 1570c -> priority: 1 
+  Thread -> id: 16ae0 -> priority: 1 
+  Thread -> id: 159fc -> priority: 1 
