@@ -1,8 +1,20 @@
 # 2D Endless Runner Game
 
-#### Created by Kyle Lim with Unity Editor
+Created by Kyle Lim
+
+![Screenshot](https://raw.githubusercontent.com/kyle8998/2D-Endless-Runner/master/img/screenshot.PNG)
+
+Project currently on hold. Looking to expand in the future.
 
 ---
+
+### Technologies Used
+
+Unity Editor
+
+C#
+
+Shaderlab and JS for lighting scripts
 
 ### How to Test (iOS)
 
